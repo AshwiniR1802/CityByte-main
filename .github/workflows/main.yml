@@ -40,7 +40,7 @@ jobs:
           WEATHER_BIT_X_RAPID_API_HOST: ${{ secrets.WEATHER_BIT_X_RAPID_API_HOST }}
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
           PYTHONPATH: ${{ github.workspace }} 
-          DJANGO_SETTINGS_MODULE: $PYTHONPATH.CityByte.settings
+          DJANGO_SETTINGS_MODULE: CityByte.settings
         run: pytest $PYTHONPATH/CityByte/tests/tests_api.py  --cov --cov -report=xml
 
       - name: Upload results to Codecov
