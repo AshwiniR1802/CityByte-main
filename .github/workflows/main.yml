@@ -2,11 +2,9 @@ name: Run tests and upload coverage
 
 on: 
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   test:
@@ -21,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'  # Specify Python version if needed
+          python-version: '3.8'
 
       - name: Install dependencies
         run: |
@@ -29,7 +27,9 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Run tests
-        run: pytest --cov=CityByte --cov-report=xml  # Replace 'CityByte' with your module name if necessary
+        env:
+          DJANGO_SETTINGS_MODULE: CityByte.settings  # Set this environment variable here
+        run: pytest --cov=CityByte --cov-report=xml  # Replace 'CityByte' with your project/module name
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
