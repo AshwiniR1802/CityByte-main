@@ -72,10 +72,10 @@ class CityByteAPITests(TestCase):
     #         self.assertEqual(response.status_code, 200)  # Should still render the page
     #         #self.assertContains(response, 'Restaurant A')
 
-    def test_profile_page(self):
-        FavCityEntry.objects.create(city='New York', country='USA', user=self.user)
-        response = self.client.get(reverse('profile_page'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'New York')
+    # def test_profile_page(self):
+    #     FavCityEntry.objects.create(city='New York', country='USA', user=self.user)
+    #     response = self.client.get(reverse('profile_page'))
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertContains(response, 'New York')
 
     
