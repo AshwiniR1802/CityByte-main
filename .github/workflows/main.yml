@@ -30,6 +30,15 @@ jobs:
       - name: Run tests
         env:
           DJANGO_SETTINGS_MODULE: CityByte.settings  # Set this environment variable here
+          GEODB_X_RAPID_API_KEY: ${{ secrets.GEODB_X_RAPID_API_KEY }}
+          GEODB_X_RAPID_API_HOST: ${{ secrets.GEODB_X_RAPID_API_HOST }}
+          AMADEUS_API_KEY: ${{ secrets.AMADEUS_API_KEY }}
+          AMADEUS_API_SECRET_KEY: ${{ secrets.AMADEUS_API_SECRET_KEY }}
+          UNSPLASH_API_KEY: ${{ secrets.UNSPLASH_API_KEY }}
+          FOURSQUARE_API_KEY: ${{ secrets.FOURSQUARE_API_KEY }}
+          WEATHER_BIT_X_RAPID_API_KEY: ${{ secrets.WEATHER_BIT_X_RAPID_API_KEY }}
+          WEATHER_BIT_X_RAPID_API_HOST: ${{ secrets.WEATHER_BIT_X_RAPID_API_HOST }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
           PYTHONPATH: ${{ github.workspace }} 
         run: pytest $PYTHONPATH/CityByte/tests/all_tests.py  --cov --cov -report=xml
 
