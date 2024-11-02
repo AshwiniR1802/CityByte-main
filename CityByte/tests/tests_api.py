@@ -25,14 +25,14 @@ class CityByteAPITests(TestCase):
         response = self.client.get(reverse('addToFav'), {'city': '', 'country': ''})
         self.assertEqual(response.json(), {'data': None})
 
-    @patch('info.helpers.weather.WeatherBitHelper')
-    @patch('info.helpers.newsapi_helper.NewsAPIHelper')
-    @patch('info.helpers.places.FourSquarePlacesHelper')
-    @patch('search.helpers.photo.UnplashCityPhotoHelper')
-    @pytest.mark.parametrize("city, country, expected_photo_link", [
-        ("New York", "USA", "https://example.com/photo.jpg"),
-        # Add more test cases if needed
-    ])
+    # @patch('info.helpers.weather.WeatherBitHelper')
+    # @patch('info.helpers.newsapi_helper.NewsAPIHelper')
+    # @patch('info.helpers.places.FourSquarePlacesHelper')
+    # @patch('search.helpers.photo.UnplashCityPhotoHelper')
+    # @pytest.mark.parametrize("city, country, expected_photo_link", [
+    #     ("New York", "USA", "https://example.com/photo.jpg"),
+    #     # Add more test cases if needed
+    # ])
     # def test_info_page_with_valid_data(self, city, country, expected_photo_link):
     #     # Mock the return value of the FourSquarePlacesHelper
     #     FourSquarePlacesHelper.get_place_photo = lambda fsq_id: expected_photo_link
@@ -77,5 +77,3 @@ class CityByteAPITests(TestCase):
     #     response = self.client.get(reverse('profile_page'))
     #     self.assertEqual(response.status_code, 200)
     #     self.assertContains(response, 'New York')
-
-    
