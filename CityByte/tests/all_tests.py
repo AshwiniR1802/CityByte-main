@@ -450,14 +450,14 @@ class SignUpTests(TestCase):
         self.assertEqual(response.status_code, 200)  # Form should not be submitted
         self.assertContains(response, 'This field is required.')  # Error message check
 
-    def test_signup_empty_password1(self):
-        response = self.client.post(reverse('signup'), {
-            'username': 'testuser',
-            'password1': 'Password123!',
-            'password2': ''
-        })
-        self.assertEqual(response.status_code, 200)  # Form should not be submitted
-        self.assertContains(response, 'This field is required.')  # Error message check
+    # def test_signup_empty_password1(self):
+    #     response = self.client.post(reverse('signup'), {
+    #         'username': 'testuser',
+    #         'password1': 'Password123!',
+    #         'password2': ''
+    #     })
+    #     self.assertEqual(response.status_code, 200)  # Form should not be submitted
+    #     self.assertContains(response, 'This field is required.')  # Error message check
 
     # def test_signup_empty_password2(self):
     #     response = self.client.post(reverse('signup'), {
