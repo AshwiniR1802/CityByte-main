@@ -41,7 +41,7 @@ jobs:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
           PYTHONPATH: ${{ github.workspace }} 
           DJANGO_SETTINGS_MODULE: CityByte.settings
-        run: pytest $PYTHONPATH/CityByte/tests/tests_api.py --cov --cov-report=xml
+        run: pytest $PYTHONPATH/CityByte/tests/all_tests.py --cov --cov-report=xml
 
       - name: Upload Results to Codecov
         uses: codecov/codecov-action@v4
