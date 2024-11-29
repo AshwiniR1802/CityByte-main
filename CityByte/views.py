@@ -37,7 +37,7 @@ class CustomPasswordResetView(PasswordResetView):
     
 # Initialize the LLM with the Gemini API key
 def initialize_gemini_llm():
-    api_key = 'AIzaSyCQuxhdViKd_-H1CQxEpFsgsHEolKLEN7w' # Fetch the key from an environment variable
+    api_key = '' # Fetch the key from an environment variable
     if not api_key:
         raise Exception("Gemini API Key not set. Please configure the key.")
     
